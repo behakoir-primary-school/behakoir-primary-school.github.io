@@ -4,61 +4,216 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>বিদ্যালয়ের নোটিশ</title>
+<title>৮ নং বেহাকৈর সরকারি প্রাথমিক বিদ্যালয়</title>
 <style>
+* { box-sizing: border-box; }
 body {
   margin: 0;
   font-family: "Noto Sans Bengali", sans-serif;
-  background: #f3f6fa;
-  color: #222;
+  background: #f3f8f5;
+  color: #26352c;
 }
 header {
-  background: #087443;
+  background: linear-gradient(135deg,#075c37,#10965a);
   color: white;
   text-align: center;
-  padding: 28px 12px;
+  padding: 30px 15px;
 }
-header h1 { margin: 0; font-size: 28px; }
+.logo {
+  width: 115px;
+  height: 115px;
+  object-fit: contain;
+  background: white;
+  border-radius: 50%;
+  padding: 5px;
+}
+header h1 { font-size: 27px; margin: 12px 0 5px; }
+header p { margin: 7px 0; }
+.established { font-size: 14px; }
+nav {
+  background: #064d30;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 8px;
+  gap: 4px;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+nav a {
+  color: white;
+  text-decoration: none;
+  padding: 10px 13px;
+  border-radius: 6px;
+  font-size: 15px;
+}
+nav a:hover { background: #15965b; }
 main {
-  max-width: 850px;
+  max-width: 1100px;
   margin: 25px auto;
   padding: 0 15px;
 }
-.notice {
+.welcome {
   background: white;
-  padding: 20px;
-  margin-bottom: 16px;
-  border-radius: 10px;
+  padding: 28px 20px;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 2px 10px #0001;
+  margin-bottom: 25px;
+}
+.welcome h2 { color: #087443; }
+.section {
+  background: white;
+  padding: 23px;
+  margin-bottom: 22px;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px #0001;
+  scroll-margin-top: 80px;
+}
+.section h2 {
+  color: #087443;
+  border-bottom: 2px solid #e0eee5;
+  padding-bottom: 10px;
+}
+.notice {
+  background: #f7fbf8;
+  padding: 18px;
+  margin-bottom: 15px;
+  border-radius: 9px;
   border-left: 5px solid #087443;
-  box-shadow: 0 2px 8px #0001;
 }
 .notice h2 { color: #087443; margin-top: 0; }
 .date { color: #777; font-size: 14px; }
 .notice p { line-height: 1.9; }
-footer {
+.placeholder {
+  color: #66766b;
+  line-height: 1.9;
+}
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(210px,1fr));
+  gap: 15px;
+}
+.card {
+  background: #f0f8f3;
+  border-radius: 10px;
+  padding: 18px;
   text-align: center;
-  padding: 20px;
-  color: #666;
+}
+.card h3 { color: #087443; }
+footer {
+  background: #064d30;
+  color: white;
+  text-align: center;
+  padding: 25px 12px;
+  line-height: 1.8;
+}
+@media(max-width:600px) {
+  header h1 { font-size: 21px; }
+  nav a { padding: 8px; font-size: 13px; }
+  .section { padding: 17px; }
 }
 </style>
 </head>
 <body>
 
 <header>
-  <img src="logo.png" alt="বিদ্যালয়ের লোগো" style="width:120px; height:120px; object-fit:contain;">
+  <img class="logo" src="logo.png" alt="বিদ্যালয়ের লোগো">
   <h1>৮ নং বেহাকৈর সরকারি প্রাথমিক বিদ্যালয়</h1>
   <p>কাঁচপুর, সোনারগাঁ, নারায়ণগঞ্জ</p>
-  <p>প্রতিষ্ঠিত: ১৯৪২ সাল</p>
-  <h2>বিদ্যালয়ের নোটিশ বোর্ড</h2>
-  <p>সকল বিজ্ঞপ্তি ও গুরুত্বপূর্ণ ঘোষণা</p>
+  <p class="established">প্রতিষ্ঠিত: ১৯৪২ সাল</p>
 </header>
 
+<nav>
+  <a href="#home">হোম</a>
+  <a href="#about">বিদ্যালয় পরিচিতি</a>
+  <a href="#teachers">শিক্ষকবৃন্দ</a>
+  <a href="#students">শিক্ষার্থী</a>
+  <a href="#results">পরীক্ষার ফলাফল</a>
+  <a href="#activities">কার্যক্রম</a>
+  <a href="#curriculum">পাঠ্যক্রম</a>
+  <a href="#notices">নোটিশ</a>
+  <a href="#gallery">গ্যালারি</a>
+  <a href="#admission">ভর্তি তথ্য</a>
+  <a href="#contact">যোগাযোগ</a>
+</nav>
+
 <main>
+
+<section class="welcome" id="home">
+  <h2>আমাদের বিদ্যালয়ে স্বাগতম</h2>
+  <p>শিক্ষা, শৃঙ্খলা ও নৈতিকতার সমন্বয়ে
+  আলোকিত মানুষ গড়াই আমাদের লক্ষ্য।</p>
+</section>
+
+<section class="section" id="about">
+  <h2>বিদ্যালয় পরিচিতি</h2>
+  <p class="placeholder">
+    ৮ নং বেহাকৈর সরকারি প্রাথমিক বিদ্যালয়।
+    অবস্থান: কাঁচপুর, সোনারগাঁ, নারায়ণগঞ্জ।
+    প্রতিষ্ঠিত: ১৯৪২ সাল।
+    বিদ্যালয়ের বিস্তারিত ইতিহাস ও পরিচিতি এখানে যুক্ত করা হবে।
+  </p>
+</section>
+
+<section class="section" id="teachers">
+  <h2>শিক্ষকবৃন্দ</h2>
+  <p class="placeholder">বিদ্যালয়ের শিক্ষক ও কর্মচারীদের নাম, পদবি ও ছবি এখানে প্রকাশ করা হবে।</p>
+</section>
+
+<section class="section" id="students">
+  <h2>শিক্ষার্থী</h2>
+  <p class="placeholder">শ্রেণিভিত্তিক শিক্ষার্থীর সংখ্যা ও প্রয়োজনীয় তথ্য এখানে প্রকাশ করা হবে।</p>
+</section>
+
+<section class="section" id="results">
+  <h2>পরীক্ষার ফলাফল</h2>
+  <p class="placeholder">পরীক্ষার ফলাফল ও মেধা তালিকা এখানে প্রকাশ করা হবে।</p>
+</section>
+
+<section class="section" id="activities">
+  <h2>সহশিক্ষা ও অন্যান্য কার্যক্রম</h2>
+  <div class="cards">
+    <div class="card"><h3>ক্রীড়া কার্যক্রম</h3><p>খেলাধুলা ও প্রতিযোগিতা</p></div>
+    <div class="card"><h3>সাংস্কৃতিক অনুষ্ঠান</h3><p>গান, কবিতা ও সাংস্কৃতিক আয়োজন</p></div>
+    <div class="card"><h3>বৃক্ষরোপণ</h3><p>পরিবেশ সচেতনতামূলক কার্যক্রম</p></div>
+    <div class="card"><h3>জাতীয় দিবস</h3><p>জাতীয় দিবস উদযাপন</p></div>
+  </div>
+</section>
+
+<section class="section" id="curriculum">
+  <h2>পাঠ্যক্রম ও শিক্ষাক্রম বহির্ভূত কার্যক্রম</h2>
+  <p class="placeholder">শ্রেণিভিত্তিক পাঠ্যক্রম, পাঠদান, মূল্যায়ন ও শিক্ষামূলক কার্যক্রমের তথ্য এখানে প্রকাশ করা হবে।</p>
+</section>
+
+<section class="section" id="notices">
   <h2>সর্বশেষ নোটিশ</h2>
-  <div id="notices">নোটিশ লোড হচ্ছে...</div>
+  <div id="notices-list">নোটিশ লোড হচ্ছে...</div>
+</section>
+
+<section class="section" id="gallery">
+  <h2>ছবি গ্যালারি</h2>
+  <p class="placeholder">বিদ্যালয়ের বিভিন্ন অনুষ্ঠান, শ্রেণিকক্ষ ও কার্যক্রমের ছবি এখানে যুক্ত করা হবে।</p>
+</section>
+
+<section class="section" id="admission">
+  <h2>ভর্তি তথ্য</h2>
+  <p class="placeholder">ভর্তির নিয়ম, প্রয়োজনীয় কাগজপত্র ও যোগাযোগের তথ্য এখানে প্রকাশ করা হবে।</p>
+</section>
+
+<section class="section" id="contact">
+  <h2>যোগাযোগ</h2>
+  <p><strong>বিদ্যালয়:</strong> ৮ নং বেহাকৈর সরকারি প্রাথমিক বিদ্যালয়</p>
+  <p><strong>ঠিকানা:</strong> কাঁচপুর, সোনারগাঁ, নারায়ণগঞ্জ</p>
+</section>
+
 </main>
 
-<footer>© বিদ্যালয়ের ওয়েবসাইট</footer>
+<footer>
+  © ৮ নং বেহাকৈর সরকারি প্রাথমিক বিদ্যালয়<br>
+  প্রতিষ্ঠিত: ১৯৪২ সাল
+</footer>
 
 <script>
 const repo = "behakoir-primary-school/behakoir-primary-school.github.io";
@@ -78,7 +233,7 @@ function markdown(text) {
 }
 
 async function loadNotices() {
-  const area = document.getElementById("notices");
+  const area = document.getElementById("notices-list");
 
   try {
     const response = await fetch(
@@ -133,5 +288,7 @@ async function loadNotices() {
 
 loadNotices();
 </script>
+
 </body>
 </html>
+
