@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="bn">
 <head>
@@ -7,247 +6,245 @@
 <title>৮ নং বেহাকৈর সরকারি প্রাথমিক বিদ্যালয়</title>
 <style>
 *{box-sizing:border-box}
-body{margin:0;font-family:"Noto Sans Bengali",sans-serif;background:#f3f8f5;color:#26352c}
-header{background:linear-gradient(135deg,#075c37,#10965a);color:white;text-align:center;padding:28px 12px}
-.logo{width:115px;height:115px;object-fit:contain;background:white;border-radius:50%;padding:5px}
-header h1{font-size:26px;margin:12px 0 5px}
-header p{margin:7px}
-nav{background:#064d30;display:flex;justify-content:center;flex-wrap:wrap;padding:8px;gap:4px;position:sticky;top:0;z-index:10}
-nav a{color:white;text-decoration:none;padding:10px;border-radius:6px;font-size:14px}
-nav a:hover{background:#15965b}
-main{max-width:1100px;margin:25px auto;padding:0 15px}
-.welcome,.section{background:white;padding:22px;margin-bottom:22px;border-radius:12px;box-shadow:0 2px 10px #0001}
-.welcome{text-align:center}
-.section{scroll-margin-top:90px}
-.section h2,.welcome h2{color:#087443}
-.section h2{border-bottom:2px solid #e0eee5;padding-bottom:10px}
-.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:15px}
-.card{background:#f5faf6;padding:17px;border-radius:10px;border-left:4px solid #087443}
-.card h3{color:#087443;margin-top:0}
-.card img{width:100%;max-height:220px;object-fit:cover;border-radius:8px}
-.card p{line-height:1.8}
-.date{font-size:13px;color:#777}
-.empty{color:#718075}
-.notice{background:#f5faf6;padding:17px;margin:12px 0;border-radius:9px;border-left:5px solid #087443}
-.notice h3{color:#087443;margin-top:0}
-footer{background:#064d30;color:white;text-align:center;padding:25px;line-height:1.8}
-@media(max-width:600px){header h1{font-size:20px}nav a{font-size:12px;padding:8px}.section{padding:16px}}
+body{margin:0;font-family:"Noto Sans Bengali","SolaimanLipi",Arial,sans-serif;background:#f2f6fa;color:#18334c}
+a{text-decoration:none;color:inherit}
+.govbar{background:#064b80;color:white;padding:9px 4%;font-size:14px}
+.header{background:white;padding:18px 4%;display:flex;align-items:center;gap:22px;border-bottom:3px solid #15945a}
+.logo{width:105px;height:105px;object-fit:contain}
+.school-title{text-align:center;flex:1}
+.school-title h1{font-size:clamp(21px,3vw,34px);color:#073d80;margin:0 0 7px}
+.school-title p{margin:4px;font-size:17px}
+nav{background:#07518a;color:white;display:flex;justify-content:center;flex-wrap:wrap}
+nav a{padding:14px 13px;font-size:15px}
+nav a:hover{background:#078c56}
+.hero{min-height:280px;background:linear-gradient(90deg,rgba(0,48,87,.88),rgba(0,48,87,.15)),url('school-logo.png') center/cover;background-color:#176b83;display:flex;align-items:center;padding:35px 5%;color:white}
+.hero h2{font-size:clamp(24px,4vw,38px);max-width:650px;margin:0 0 15px}
+.hero p{font-size:18px}
+.container{max-width:1250px;margin:22px auto;padding:0 14px}
+.columns{display:grid;grid-template-columns:1fr 2.2fr 1fr;gap:15px}
+.panel{background:white;border:1px solid #d6e0e8;border-radius:7px;overflow:hidden;margin-bottom:15px;box-shadow:0 2px 5px #00000010}
+.panel h2{background:#07518a;color:white;margin:0;padding:12px 15px;font-size:20px}
+.panel-body{padding:14px}
+.quick a{display:block;padding:9px;border-bottom:1px solid #e4eaf0;color:#064b80}
+.quick a:hover{color:#078c56}
+.notice{padding:12px 5px;border-bottom:1px solid #ddd}
+.notice strong{display:block;color:#07518a;font-size:17px}
+.notice small{color:#65798a}
+.notice p{margin:7px 0}
+.staff-card{display:inline-block;vertical-align:top;width:48%;padding:10px;border:1px solid #e0e7ed;margin:1%;border-radius:6px}
+.staff-card img{width:85px;height:90px;object-fit:cover;float:left;margin-right:12px}
+.section-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}
+footer{background:#064576;color:white;text-align:center;padding:25px 12px;margin-top:25px}
+footer p{margin:7px}
+.loading{color:#60788c}
+@media(max-width:850px){.columns{grid-template-columns:1fr}.section-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:550px){.header{gap:10px;padding:12px}.logo{width:65px;height:65px}.school-title p{font-size:13px}nav a{padding:10px 9px;font-size:13px}.staff-card{width:100%}.section-grid{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
 
-<header>
-<img class="logo" src="school-logo.png" alt="বিদ্যালয়ের লোগো">
-<h1>৮ নং বেহাকৈর সরকারি প্রাথমিক বিদ্যালয়</h1>
-<p>কাঁচপুর, সোনারগাঁ, নারায়ণগঞ্জ</p>
-<p>প্রতিষ্ঠিত: ১৯৪২ সাল</p>
+<div class="govbar">
+  গণপ্রজাতন্ত্রী বাংলাদেশ সরকার | প্রাথমিক শিক্ষা অধিদপ্তর
+</div>
+
+<header class="header">
+  <img class="logo" src="school-logo.png" alt="বিদ্যালয়ের লোগো">
+  <div class="school-title">
+    <h1>৮ নং বেহাকৈর সরকারি প্রাথমিক বিদ্যালয়</h1>
+    <p>কাঁচপুর, সোনারগাঁ, নারায়ণগঞ্জ</p>
+    <p>প্রতিষ্ঠিত: ১৯৪২ সাল</p>
+  </div>
 </header>
 
 <nav>
-<a href="#home">হোম</a>
-<a href="#about">বিদ্যালয় পরিচিতি</a>
-<a href="#teachers">শিক্ষকবৃন্দ</a>
-<a href="#students">শিক্ষার্থী</a>
-<a href="#results">ফলাফল</a>
-<a href="#activities">কার্যক্রম</a>
-<a href="#curriculum">পাঠ্যক্রম</a>
-<a href="#notices">নোটিশ</a>
-<a href="#gallery">গ্যালারি</a>
-<a href="#admission">ভর্তি তথ্য</a>
-<a href="#events">জাতীয় দিবস</a>
-<a href="#contact">যোগাযোগ</a>
+  <a href="#home">হোম</a>
+  <a href="#about">বিদ্যালয় পরিচিতি</a>
+  <a href="#teachers">শিক্ষক ও কর্মচারী</a>
+  <a href="#students">শিক্ষার্থী</a>
+  <a href="#results">ফলাফল</a>
+  <a href="#curriculum">পাঠ্যক্রম</a>
+  <a href="#notices">নোটিশ</a>
+  <a href="#gallery">গ্যালারি</a>
+  <a href="#admission">ভর্তি তথ্য</a>
+  <a href="#contact">যোগাযোগ</a>
 </nav>
 
-<main>
-<section class="welcome" id="home">
-<h2>আমাদের বিদ্যালয়ে স্বাগতম</h2>
-<p>শিক্ষা, শৃঙ্খলা ও নৈতিকতার সমন্বয়ে আলোকিত মানুষ গড়াই আমাদের লক্ষ্য।</p>
+<section class="hero" id="home">
+  <div>
+    <h2>শিক্ষা, শৃঙ্খলা ও নৈতিকতার সমন্বয়ে আলোকিত মানুষ গড়াই আমাদের লক্ষ্য</h2>
+    <p>মানসম্মত প্রাথমিক শিক্ষা নিশ্চিত করতে আমরা অঙ্গীকারবদ্ধ।</p>
+    <a href="#about" style="background:#079653;color:white;padding:11px 20px;border-radius:5px;display:inline-block">আমাদের সম্পর্কে জানুন →</a>
+  </div>
 </section>
 
-<section class="section" id="about">
-<h2>বিদ্যালয় পরিচিতি</h2>
-<div id="school-list" class="empty">তথ্য লোড হচ্ছে...</div>
-</section>
+<main class="container">
+  <div class="columns">
+    <aside>
+      <div class="panel">
+        <h2>দ্রুত লিংক</h2>
+        <div class="panel-body quick">
+          <a href="#about">বিদ্যালয় পরিচিতি</a>
+          <a href="#teachers">শিক্ষক ও কর্মচারী</a>
+          <a href="#students">শিক্ষার্থী তথ্য</a>
+          <a href="#results">পরীক্ষার ফলাফল</a>
+          <a href="#admission">ভর্তি তথ্য</a>
+          <a href="#gallery">ছবি গ্যালারি</a>
+          <a href="#contact">যোগাযোগ</a>
+        </div>
+      </div>
+      <div class="panel">
+        <h2>গুরুত্বপূর্ণ লিংক</h2>
+        <div class="panel-body quick">
+          <a href="https://www.dpe.gov.bd/" target="_blank">প্রাথমিক শিক্ষা অধিদপ্তর</a>
+          <a href="https://mopme.gov.bd/" target="_blank">প্রাথমিক ও গণশিক্ষা মন্ত্রণালয়</a>
+          <a href="https://bangladesh.gov.bd/" target="_blank">বাংলাদেশ জাতীয় তথ্য বাতায়ন</a>
+        </div>
+      </div>
+    </aside>
 
-<section class="section" id="teachers">
-<h2>শিক্ষক ও কর্মচারী</h2>
-<div id="teachers-list" class="cards">তথ্য লোড হচ্ছে...</div>
-</section>
+    <section class="panel" id="notices">
+      <h2>📢 সর্বশেষ নোটিশ</h2>
+      <div class="panel-body" id="notice-list"><p class="loading">নোটিশ লোড হচ্ছে...</p></div>
+    </section>
 
-<section class="section" id="students">
-<h2>শিক্ষার্থী তথ্য</h2>
-<div id="students-list" class="cards">তথ্য লোড হচ্ছে...</div>
-</section>
+    <aside>
+      <div class="panel">
+        <h2>প্রধান শিক্ষকের বার্তা</h2>
+        <div class="panel-body" id="head-message">
+          <p>শিক্ষার মানোন্নয়ন ও শিক্ষার্থীদের সুন্দর ভবিষ্যৎ গঠনে আমরা নিরলসভাবে কাজ করছি।</p>
+        </div>
+      </div>
+      <div class="panel">
+        <h2>বিদ্যালয়ের তথ্য</h2>
+        <div class="panel-body">
+          <p>প্রতিষ্ঠিত: ১৯৪২ সাল</p>
+          <p>ঠিকানা: কাঁচপুর, সোনারগাঁ, নারায়ণগঞ্জ</p>
+        </div>
+      </div>
+    </aside>
+  </div>
 
-<section class="section" id="results">
-<h2>পরীক্ষার ফলাফল</h2>
-<div id="results-list" class="cards">তথ্য লোড হচ্ছে...</div>
-</section>
-
-<section class="section" id="activities">
-<h2>সহশিক্ষা কার্যক্রম</h2>
-<div id="activities-list" class="cards">তথ্য লোড হচ্ছে...</div>
-</section>
-
-<section class="section" id="curriculum">
-<h2>পাঠ্যক্রম ও শিক্ষাক্রম</h2>
-<div id="curriculum-list" class="cards">তথ্য লোড হচ্ছে...</div>
-</section>
-
-<section class="section" id="notices">
-<h2>সর্বশেষ নোটিশ</h2>
-<div id="notices-list">নোটিশ লোড হচ্ছে...</div>
-</section>
-
-<section class="section" id="gallery">
-<h2>ছবি গ্যালারি</h2>
-<div id="gallery-list" class="cards">ছবি লোড হচ্ছে...</div>
-</section>
-
-<section class="section" id="admission">
-<h2>ভর্তি তথ্য</h2>
-<div id="admission-list" class="cards">তথ্য লোড হচ্ছে...</div>
-</section>
-
-<section class="section" id="events">
-<h2>জাতীয় দিবস ও বার্ষিক কর্মপরিকল্পনা</h2>
-<div id="events-list" class="cards">তথ্য লোড হচ্ছে...</div>
-</section>
-
-<section class="section" id="contact">
-<h2>যোগাযোগ</h2>
-<p>৮ নং বেহাকৈর সরকারি প্রাথমিক বিদ্যালয়</p>
-<p>কাঁচপুর, সোনারগাঁ, নারায়ণগঞ্জ</p>
-</section>
+  <div class="section-grid">
+    <section class="panel" id="about">
+      <h2>বিদ্যালয় পরিচিতি</h2>
+      <div class="panel-body" id="school-list">তথ্য লোড হচ্ছে...</div>
+    </section>
+    <section class="panel" id="teachers">
+      <h2>শিক্ষক ও কর্মচারী</h2>
+      <div class="panel-body" id="teacher-list">তথ্য লোড হচ্ছে...</div>
+    </section>
+    <section class="panel" id="students">
+      <h2>শিক্ষার্থী তথ্য</h2>
+      <div class="panel-body" id="student-list">তথ্য লোড হচ্ছে...</div>
+    </section>
+    <section class="panel" id="results">
+      <h2>পরীক্ষার ফলাফল</h2>
+      <div class="panel-body" id="result-list">তথ্য লোড হচ্ছে...</div>
+    </section>
+    <section class="panel" id="curriculum">
+      <h2>পাঠ্যক্রম</h2>
+      <div class="panel-body" id="curriculum-list">তথ্য লোড হচ্ছে...</div>
+    </section>
+    <section class="panel" id="activities">
+      <h2>বিদ্যালয়ের কার্যক্রম</h2>
+      <div class="panel-body" id="activity-list">তথ্য লোড হচ্ছে...</div>
+    </section>
+    <section class="panel" id="gallery">
+      <h2>ছবি গ্যালারি</h2>
+      <div class="panel-body" id="gallery-list">ছবি লোড হচ্ছে...</div>
+    </section>
+    <section class="panel" id="admission">
+      <h2>ভর্তি তথ্য</h2>
+      <div class="panel-body" id="admission-list">তথ্য লোড হচ্ছে...</div>
+    </section>
+    <section class="panel" id="events">
+      <h2>জাতীয় দিবস ও অনুষ্ঠান</h2>
+      <div class="panel-body" id="event-list">তথ্য লোড হচ্ছে...</div>
+    </section>
+  </div>
 </main>
 
-<footer>
-© ৮ নং বেহাকৈর সরকারি প্রাথমিক বিদ্যালয়<br>
-প্রতিষ্ঠিত: ১৯৪২ সাল
+<footer id="contact">
+  <h2>৮ নং বেহাকৈর সরকারি প্রাথমিক বিদ্যালয়</h2>
+  <p>কাঁচপুর, সোনারগাঁ, নারায়ণগঞ্জ</p>
+  <p>প্রতিষ্ঠিত: ১৯৪২ সাল</p>
+  <p>© সর্বস্বত্ব সংরক্ষিত</p>
 </footer>
 
 <script>
-const repo="behakoir-primary-school/behakoir-primary-school.github.io";
+const repo = "behakoir-primary-school/behakoir-primary-school.github.io";
 
-function esc(value=""){
- return String(value).replace(/[&<>"']/g,c=>({
-  "&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"
- })[c]);
-}
-
-function markdown(value=""){
- return esc(value)
- .replace(/\*\*(.*?)\*\*/g,"<strong>$1</strong>")
- .replace(/\*(.*?)\*/g,"<em>$1</em>")
- .replace(/\n/g,"<br>");
-}
-
-function parseFile(content){
- const match=content.match(/^---\s*\r?\n([\s\S]*?)\r?\n---\s*\r?\n?/);
- if(!match)return null;
- const data={};
- match[1].split(/\r?\n/).forEach(line=>{
-  const item=line.match(/^([A-Za-z_][\w-]*):\s*(.*)$/);
-  if(item)data[item[1]]=item[2].replace(/^["']|["']$/g,"").trim();
- });
- data.body=content.slice(match[0].length).trim();
- return data;
-}
-
-async function getCollection(folder){
- const url=`https://api.github.com/repos/${repo}/contents/${folder}`;
- const response=await fetch(url,{cache:"no-store"});
- if(!response.ok)return [];
- const files=await response.json();
- if(!Array.isArray(files))return [];
- const markdownFiles=files.filter(f=>f.name.endsWith(".md"));
- return Promise.all(markdownFiles.map(async file=>{
-  const r=await fetch(file.download_url);
-  if(!r.ok)return null;
-  return parseFile(await r.text());
- }));
-}
-
-function imageHTML(path){
- if(!path)return "";
- const safe=esc(path);
- return `<img src="${safe}" alt="বিদ্যালয়ের ছবি" loading="lazy">`;
-}
-
-function showCards(id,items,kind){
- const area=document.getElementById(id);
- const valid=items.filter(Boolean);
- if(!valid.length){
-  area.innerHTML='<p class="empty">এখনো কোনো তথ্য প্রকাশ করা হয়নি।</p>';
-  return;
- }
- area.innerHTML=valid.map(x=>{
-  let title=x.title||x.name||x.class||"তথ্য";
-  let details="";
-  if(kind==="teachers"){
-   title=x.name||title;
-   details=`<p>${esc(x.designation||"")}</p>${x.photo?imageHTML(x.photo):""}<p>${markdown(x.bio||x.body||"")}</p>`;
-  }else if(kind==="students"){
-   details=`<p>শিক্ষাবর্ষ: ${esc(x.year||"")}</p><p>শিক্ষার্থীর সংখ্যা: ${esc(x.total||"")}</p>${markdown(x.body||"")}`;
-  }else if(kind==="results"){
-   details=`<p>শ্রেণি: ${esc(x.class||"")} | শিক্ষাবর্ষ: ${esc(x.year||"")}</p>${markdown(x.body||"")}`;
-   if(x.file)details+=`<p><a href="${esc(x.file)}" target="_blank" rel="noopener">ফলাফলের ফাইল দেখুন</a></p>`;
-  }else if(kind==="activities"||kind==="events"){
-   details=`<p class="date">${esc(x.date||"")}</p>${x.image?imageHTML(x.image):""}<p>${markdown(x.body||"")}</p>`;
-  }else if(kind==="curriculum"||kind==="admission"||kind==="school"){
-   details=`${x.class?`<p>শ্রেণি: ${esc(x.class)}</p>`:""}<p>${markdown(x.body||"")}</p>`;
-  }else if(kind==="gallery"){
-   details=imageHTML(x.image)+`<p>${esc(x.caption||"")}</p>`;
+function parseMarkdown(md) {
+  const match = md.match(/^---\s*([\s\S]*?)\s*---\s*([\s\S]*)$/);
+  let data = {};
+  let body = md;
+  if (match) {
+    body = match[2];
+    match[1].split("\n").forEach(line => {
+      const i = line.indexOf(":");
+      if (i > -1) data[line.slice(0,i).trim()] = line.slice(i+1).trim().replace(/^["']|["']$/g,"");
+    });
   }
-  return `<article class="card"><h3>${esc(title)}</h3>${details}</article>`;
- }).join("");
+  return {data, body};
 }
 
-async function loadAll(){
- const folders=[
-  ["school","school-list","school"],
-  ["teachers","teachers-list","teachers"],
-  ["students","students-list","students"],
-  ["results","results-list","results"],
-  ["activities","activities-list","activities"],
-  ["curriculum","curriculum-list","curriculum"],
-  ["gallery","gallery-list","gallery"],
-  ["admission","admission-list","admission"],
-  ["events","events-list","events"]
- ];
- await Promise.all(folders.map(async ([folder,id,kind])=>{
-  try{
-   const items=await getCollection(folder);
-   showCards(id,items,kind);
-  }catch(e){
-   document.getElementById(id).textContent="তথ্য লোড করা যায়নি।";
+function safeText(value) {
+  return String(value || "").replace(/[&<>"']/g, c => ({
+    "&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"
+  })[c]);
+}
+
+function showText(body) {
+  return safeText(body).replace(/\n/g,"<br>");
+}
+
+async function loadCollection(folder, target, type) {
+  const box = document.getElementById(target);
+  try {
+    const url = `https://api.github.com/repos/${repo}/contents/${folder}`;
+    const response = await fetch(url);
+    if (!response.ok) throw new Error("No data");
+    const files = await response.json();
+    const markdownFiles = files.filter(f => f.name.endsWith(".md"));
+    if (!markdownFiles.length) {
+      box.innerHTML = "<p>এখনো কোনো তথ্য প্রকাশ করা হয়নি।</p>";
+      return;
+    }
+    const records = await Promise.all(markdownFiles.map(async file => {
+      const r = await fetch(file.download_url);
+      return parseMarkdown(await r.text());
+    }));
+    records.sort((a,b) => (b.data.date || "").localeCompare(a.data.date || ""));
+    box.innerHTML = records.map(({data,body}) => {
+      const title = safeText(data.title || data.name || "তথ্য");
+      const date = data.date ? `<small>${safeText(data.date)}</small>` : "";
+      if (type === "teacher") {
+        const photo = data.photo ? `<img src="${safeText(data.photo)}" alt="">` : "";
+        return `<div class="staff-card">${photo}<strong>${safeText(data.name || title)}</strong><p>${safeText(data.designation || "")}</p><p>${showText(data.bio || body)}</p></div>`;
+      }
+      if (type === "image") {
+        return `<div class="notice"><strong>${title}</strong>${data.image ? `<img src="${safeText(data.image)}" alt="" style="width:100%;margin-top:8px">` : ""}<p>${showText(data.caption || body)}</p></div>`;
+      }
+      if (type === "file") {
+        return `<div class="notice"><strong>${title}</strong>${date}<p>${showText(body)}</p>${data.file ? `<a href="${safeText(data.file)}" target="_blank">ফাইল দেখুন / ডাউনলোড</a>` : ""}</div>`;
+      }
+      return `<div class="notice"><strong>${title}</strong>${date}<p>${showText(body)}</p></div>`;
+    }).join("");
+  } catch (error) {
+    box.innerHTML = "<p>তথ্য লোড করা যাচ্ছে না। পরে আবার চেষ্টা করুন।</p>";
   }
- }));
 }
 
-async function loadNotices(){
- const area=document.getElementById("notices-list");
- try{
-  const items=await getCollection("notices");
-  const valid=items.filter(Boolean).sort((a,b)=>new Date(b.date)-new Date(a.date));
-  if(!valid.length){
-   area.textContent="এখনো কোনো নোটিশ প্রকাশিত হয়নি।";
-   return;
-  }
-  area.innerHTML=valid.map(n=>`
-   <article class="notice">
-    <h3>${esc(n.title||"নোটিশ")}</h3>
-    <div class="date">${esc(n.date||"")}</div>
-    <p>${markdown(n.body||"")}</p>
-   </article>
-  `).join("");
- }catch(e){
-  area.textContent="নোটিশ লোড করা যায়নি।";
- }
-}
-
-loadAll();
-loadNotices();
+loadCollection("notices","notice-list","notice");
+loadCollection("school","school-list","text");
+loadCollection("teachers","teacher-list","teacher");
+loadCollection("students","student-list","text");
+loadCollection("results","result-list","file");
+loadCollection("curriculum","curriculum-list","text");
+loadCollection("activities","activity-list","text");
+loadCollection("gallery","gallery-list","image");
+loadCollection("admission","admission-list","text");
+loadCollection("events","event-list","text");
 </script>
 </body>
 </html>
