@@ -1,3 +1,4 @@
+
 backend:
   name: turbo-github
   turbo_site_id: 1a82350f-649e-4945-bbfd-c8e92aea0cc9
@@ -6,18 +7,118 @@ media_folder: "images"
 public_folder: "/images"
 
 collections:
+
+  # বিদ্যালয়ের নোটিশ
   - name: "notices"
     label: "বিদ্যালয়ের নোটিশ"
     folder: "notices"
     create: true
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     fields:
-      - label: "নোটিশের শিরোনাম"
-        name: "title"
-        widget: "string"
-      - label: "তারিখ"
-        name: "date"
-        widget: "datetime"
-      - label: "বিস্তারিত"
-        name: "body"
-        widget: "markdown"
+      - { label: "নোটিশের শিরোনাম", name: "title", widget: "string" }
+      - { label: "তারিখ", name: "date", widget: "datetime" }
+      - { label: "বিস্তারিত", name: "body", widget: "markdown" }
+
+  # বিদ্যালয়ের পরিচিতি
+  - name: "school"
+    label: "বিদ্যালয়ের পরিচিতি"
+    folder: "school"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "শিরোনাম", name: "title", widget: "string" }
+      - { label: "বিস্তারিত", name: "body", widget: "markdown" }
+
+  # শিক্ষক ও কর্মচারী
+  - name: "teachers"
+    label: "শিক্ষক ও কর্মচারী"
+    folder: "teachers"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "নাম", name: "name", widget: "string" }
+      - { label: "পদবি", name: "designation", widget: "string" }
+      - { label: "ছবি", name: "photo", widget: "image", required: false }
+      - { label: "পরিচিতি", name: "bio", widget: "text", required: false }
+      - { label: "ক্রম", name: "order", widget: "number", required: false }
+
+  # শিক্ষার্থী সংক্রান্ত তথ্য
+  - name: "students"
+    label: "শিক্ষার্থী তথ্য"
+    folder: "students"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "শ্রেণি", name: "class", widget: "string" }
+      - { label: "শিক্ষাবর্ষ", name: "year", widget: "number" }
+      - { label: "শিক্ষার্থীর সংখ্যা", name: "total", widget: "number" }
+      - { label: "বিস্তারিত", name: "body", widget: "markdown", required: false }
+
+  # পরীক্ষার ফলাফল
+  - name: "results"
+    label: "পরীক্ষার ফলাফল"
+    folder: "results"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "পরীক্ষার নাম", name: "title", widget: "string" }
+      - { label: "শ্রেণি", name: "class", widget: "string" }
+      - { label: "শিক্ষাবর্ষ", name: "year", widget: "number" }
+      - { label: "ফলাফলের বিস্তারিত", name: "body", widget: "markdown" }
+      - { label: "ফলাফলের PDF", name: "file", widget: "file", required: false }
+
+  # সহশিক্ষা কার্যক্রম
+  - name: "activities"
+    label: "সহশিক্ষা কার্যক্রম"
+    folder: "activities"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "কার্যক্রমের নাম", name: "title", widget: "string" }
+      - { label: "তারিখ", name: "date", widget: "datetime", required: false }
+      - { label: "ছবি", name: "image", widget: "image", required: false }
+      - { label: "বিস্তারিত", name: "body", widget: "markdown" }
+
+  # পাঠ্যক্রম
+  - name: "curriculum"
+    label: "পাঠ্যক্রম ও শিক্ষাক্রম"
+    folder: "curriculum"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "শিরোনাম", name: "title", widget: "string" }
+      - { label: "শ্রেণি", name: "class", widget: "string", required: false }
+      - { label: "বিস্তারিত", name: "body", widget: "markdown" }
+
+  # ছবি গ্যালারি
+  - name: "gallery"
+    label: "ছবি গ্যালারি"
+    folder: "gallery"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "ছবির শিরোনাম", name: "title", widget: "string" }
+      - { label: "ছবি", name: "image", widget: "image" }
+      - { label: "ছবির বিবরণ", name: "caption", widget: "text", required: false }
+
+  # ভর্তি তথ্য
+  - name: "admission"
+    label: "ভর্তি তথ্য"
+    folder: "admission"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "শিরোনাম", name: "title", widget: "string" }
+      - { label: "বিস্তারিত", name: "body", widget: "markdown" }
+
+  # জাতীয় দিবস ও বার্ষিক কর্মপরিকল্পনা
+  - name: "events"
+    label: "জাতীয় দিবস ও বার্ষিক কর্মপরিকল্পনা"
+    folder: "events"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "অনুষ্ঠানের নাম", name: "title", widget: "string" }
+      - { label: "তারিখ", name: "date", widget: "datetime", required: false }
+      - { label: "বিস্তারিত", name: "body", widget: "markdown" }
+
