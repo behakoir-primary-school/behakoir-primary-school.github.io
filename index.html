@@ -200,37 +200,79 @@ function showText(body) {
 
 async function loadCollection(folder, target, type) {
   const box = document.getElementById(target);
+
   try {
     const url = `https://api.github.com/repos/${repo}/contents/${folder}`;
     const response = await fetch(url);
-    if (!response.ok) throw new Error("No data");
+
+    if (!response.ok) throw new Error("GitHub API error");
+
     const files = await response.json();
     const markdownFiles = files.filter(f => f.name.endsWith(".md"));
+
     if (!markdownFiles.length) {
       box.innerHTML = "<p>এখনো কোনো তথ্য প্রকাশ করা হয়নি।</p>";
       return;
     }
+
     const records = await Promise.all(markdownFiles.map(async file => {
-      const r = await fetch(file.download_url);
+      const rawUrl = `https://raw.githubusercontent.com/${repo}/main/${folder}/${encodeURIComponent(file.name)}`;
+      const r = await fetch(rawUrl);
+
+      if (!r.ok) throw new Error("File load error");
+
       return parseMarkdown(await r.text());
     }));
-    records.sort((a,b) => (b.data.date || "").localeCompare(a.data.date || ""));
+
+    records.sort((a,b) =>
+      (b.data.date || "").localeCompare(a.data.date || "")
+    );
+
     box.innerHTML = records.map(({data,body}) => {
       const title = safeText(data.title || data.name || "তথ্য");
-      const date = data.date ? `<small>${safeText(data.date)}</small>` : "";
+      const date = data.date
+        ? `<small>${safeText(data.date)}</small>` : "";
+
       if (type === "teacher") {
-        const photo = data.photo ? `<img src="${safeText(data.photo)}" alt="">` : "";
-        return `<div class="staff-card">${photo}<strong>${safeText(data.name || title)}</strong><p>${safeText(data.designation || "")}</p><p>${showText(data.bio || body)}</p></div>`;
+        const name = safeText(data.name || title);
+        const designation = safeText(data.designation || "");
+        const photo = data.photo
+          ? `<img src="${safeText(data.photo)}" alt="${name}">`
+          : "";
+
+        return `
+          <div class="staff-card">
+            ${photo}
+            <strong>${name}</strong>
+            <p>${designation}</p>
+            ${body.trim() ? `<p>${showText(body)}</p>` : ""}
+          </div>`;
       }
+
       if (type === "image") {
-        return `<div class="notice"><strong>${title}</strong>${data.image ? `<img src="${safeText(data.image)}" alt="" style="width:100%;margin-top:8px">` : ""}<p>${showText(data.caption || body)}</p></div>`;
+        return `<div class="notice">
+          <strong>${title}</strong>
+          ${data.image ? `<img src="${safeText(data.image)}" alt="" style="width:100%;margin-top:8px">` : ""}
+          <p>${showText(data.caption || body)}</p>
+        </div>`;
       }
+
       if (type === "file") {
-        return `<div class="notice"><strong>${title}</strong>${date}<p>${showText(body)}</p>${data.file ? `<a href="${safeText(data.file)}" target="_blank">ফাইল দেখুন / ডাউনলোড</a>` : ""}</div>`;
+        return `<div class="notice">
+          <strong>${title}</strong>${date}
+          <p>${showText(body)}</p>
+          ${data.file ? `<a href="${safeText(data.file)}" target="_blank">ফাইল দেখুন / ডাউনলোড</a>` : ""}
+        </div>`;
       }
-      return `<div class="notice"><strong>${title}</strong>${date}<p>${showText(body)}</p></div>`;
+
+      return `<div class="notice">
+        <strong>${title}</strong>${date}
+        <p>${showText(body)}</p>
+      </div>`;
     }).join("");
+
   } catch (error) {
+    console.error("Collection loading error:", folder, error);
     box.innerHTML = "<p>তথ্য লোড করা যাচ্ছে না। পরে আবার চেষ্টা করুন।</p>";
   }
 }
