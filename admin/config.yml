@@ -1,0 +1,8 @@
+backend:
+  name: turbo-github
+  turbo_site_id: 1a82350f-649e-4945-bbfd-c8e92aea0cc9
+
+media_folder: "images"
+public_folder: "/images"
+
+collections: []
