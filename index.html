@@ -288,7 +288,9 @@ async function loadCollection(folder, target, type) {
     const url = `https://api.github.com/repos/${repo}/contents/${folder}`;
     const response = await fetch(url);
 
-    if (!response.ok) throw new Error("GitHub API error");
+    if (!response.ok) {
+  throw new Error("GitHub API error: " + response.status);
+}
 
     const files = await response.json();
     const markdownFiles = files.filter(f => f.name.endsWith(".md"));
