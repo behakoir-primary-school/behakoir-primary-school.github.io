@@ -309,9 +309,17 @@ async function loadCollection(folder, target, type) {
       return parseMarkdown(await r.text());
     }));
 
-    records.sort((a,b) =>
-      (b.data.date || "").localeCompare(a.data.date || "")
-    );
+    if (type === "teacher") {
+  records.sort((a, b) => {
+    const orderA = Number(a.data.order) || 999;
+    const orderB = Number(b.data.order) || 999;
+    return orderA - orderB;
+  });
+} else {
+  records.sort((a,b) =>
+    (b.data.date || "").localeCompare(a.data.date || "")
+  );
+}
 
     box.innerHTML = records.map(({data,body}) => {
       const title = safeText(data.title || data.name || "তথ্য");
