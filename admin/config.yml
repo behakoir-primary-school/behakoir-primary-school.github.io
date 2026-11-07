@@ -98,7 +98,13 @@ collections:
     slug: "{{slug}}"
     fields:
       - { label: "ছবির শিরোনাম", name: "title", widget: "string" }
-      - { label: "ছবি", name: "image", widget: "image" }
+      - label: "ছবিগুলো"
+  name: "images"
+  widget: "list"
+  field:
+    label: "ছবি"
+    name: "image"
+    widget: "image"
       - { label: "ছবির বিবরণ", name: "caption", widget: "text", required: false }
 
   # ভর্তি তথ্য
