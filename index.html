@@ -343,12 +343,20 @@ async function loadCollection(folder, target, type) {
       }
 
       if (type === "image") {
-        return `<div class="notice">
-          <strong>${title}</strong>
-          ${data.image ? `<img src="${safeText(data.image)}" alt="" style="width:100%;margin-top:8px">` : ""}
-          <p>${showText(data.caption || body)}</p>
-        </div>`;
-      }
+  const photos = Array.isArray(data.images)
+  ? data.images
+  : (data.image ? [data.image] : []);
+
+  return `<div class="notice">
+    <strong>${title}</strong>
+    <div class="gallery-photos">
+      ${photos.map(photo =>
+        `<img src="${safeText(photo)}" alt="${title}" style="width:100%;margin-top:8px">`
+      ).join("")}
+    </div>
+    <p>${showText(data.caption || body)}</p>
+  </div>`;
+}
 
       if (type === "file") {
         return `<div class="notice">
