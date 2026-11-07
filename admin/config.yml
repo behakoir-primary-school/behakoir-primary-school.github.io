@@ -89,7 +89,7 @@ collections:
       - { label: "শিরোনাম", name: "title", widget: "string" }
       - { label: "শ্রেণি", name: "class", widget: "string", required: false }
       - { label: "বিস্তারিত", name: "body", widget: "markdown" }
-
+ 
   # ছবি গ্যালারি
   - name: "gallery"
     label: "ছবি গ্যালারি"
@@ -99,14 +99,16 @@ collections:
     fields:
       - { label: "ছবির শিরোনাম", name: "title", widget: "string" }
       - label: "ছবিগুলো"
-  name: "images"
-  widget: "list"
-  field:
-    label: "ছবি"
-    name: "image"
-    widget: "image"
+        name: "images"
+        widget: "list"
+        field:
+          label: "ছবি"
+          name: "image"
+          widget: "image"
       - { label: "ছবির বিবরণ", name: "caption", widget: "text", required: false }
 
+  # ভর্তি তথ্য
+  
   # ভর্তি তথ্য
   - name: "admission"
     label: "ভর্তি তথ্য"
